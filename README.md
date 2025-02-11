@@ -91,9 +91,10 @@ SELECT
 FROM OPENROWSET('Microsoft.ACE.OLEDB.12.0', 
                 'Excel 12.0; Database=C:\Users\your_username\Documents\cleaned_file_travel_excel.xlsx; HDR=YES', 
                 'SELECT * FROM [a$]');
- ** ```sql
+
+
 -- ========================
--- 3. Zapytania do tabeli Trips
+-- Zapytania do tabeli Trips
 -- ========================
 
 -- 1. Liczba podróży według typu zakwaterowania
@@ -143,4 +144,5 @@ SELECT
     CAST(AVG(ROUND(Accommodation_Cost + Transportation_Cost, 2)) AS INT) AS Average_Cost
 FROM Trips
 GROUP BY Country;
+
 
