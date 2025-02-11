@@ -107,6 +107,13 @@ FROM Trips
 GROUP BY Accommodation_Type
 ORDER BY Number_of_Trips DESC;
 
+ Accommodation_Type     | Number_of_Trips                  
+|------------|---------------|-------------------------------|
+| 	Hotel	| 120 | 
+| Hostel	|  80 | 
+| Apartment	| 45 | 
+| Guesthouse | 	30 | 
+
 -- 2. Całkowity koszt (zakwaterowanie + transport) dla każdej podróży
 -- To zapytanie wylicza całkowity koszt podróży, sumując koszty zakwaterowania i transportu
 SELECT 
