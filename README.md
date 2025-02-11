@@ -95,7 +95,7 @@ FROM OPENROWSET('Microsoft.ACE.OLEDB.12.0',
 
 
 -- ========================
--- Zapytania do tabeli Trips
+-- 1. Zapytania dotyczące kosztów
 -- ========================
 
 -- 1. Liczba podróży według typu zakwaterowania
@@ -106,10 +106,6 @@ SELECT
 FROM Trips
 GROUP BY Accommodation_Type
 ORDER BY Number_of_Trips DESC;
-
--- ========================
--- Koszty podróży
--- ========================
 
 -- 2. Całkowity koszt (zakwaterowanie + transport) dla każdej podróży
 -- To zapytanie wylicza całkowity koszt podróży, sumując koszty zakwaterowania i transportu
@@ -122,12 +118,7 @@ SELECT
     (Accommodation_Cost + Transportation_Cost) AS Total_Cost
 FROM Trips;
 
--- ========================
--- Średni koszt podróży na podstawie kraju
--- ========================
-
 -- 3. Średni koszt podróży w każdym kraju (z zaokrągleniem do 2 miejsc po przecinku)
--- To zapytanie oblicza średni koszt podróży w danym kraju
 SELECT 
     Country,
     AVG(ROUND(Accommodation_Cost + Transportation_Cost, 2)) AS Average_Cost
@@ -135,40 +126,41 @@ FROM Trips
 GROUP BY Country;
 
 -- ========================
--- Średni koszt podróży na podstawie kraju (z konwersją na liczbę całkowitą)
+-- 2. Zapytania dotyczące podróżników
 -- ========================
 
--- 4. Średni koszt podróży w każdym kraju z konwersją wyniku na liczbę całkowitą
--- To zapytanie oblicza średni koszt podróży w danym kraju i zaokrągla wynik do liczby całkowitej
-SELECT 
-    Country,
-    CAST(AVG(ROUND(Accommodation_Cost + Transportation_Cost, 2)) AS INT) AS Average_Cost
-FROM Trips
-GROUP BY Country;
-
-5. Obliczenie średniego czasu trwania podróży dla każdego kraju.
-SELECT Country, AVG(Duration_Days) AS Average_Duration
-FROM Trips
-GROUP BY Country;
-
-6. Podróżnicy według wieku
+-- 4. Podróżnicy według wieku
+-- To zapytanie zlicza liczbę podróżników w zależności od wieku
 SELECT t.Age, COUNT(*) AS Number_of_Travelers
 FROM Travelers t
 GROUP BY t.Age
-ORDER BY Number_of_Travelers desc
+ORDER BY Number_of_Travelers DESC;
 
-7.Podróżnicy według płci
-SELECT t.Gender,COUNT(*) AS Number_of_Travelers
+-- 5. Podróżnicy według płci
+-- Zlicza liczbę podróżników w zależności od płci
+SELECT t.Gender, COUNT(*) AS Number_of_Travelers
 FROM Travelers t
 GROUP BY t.Gender;
 
-8.Najczęściej odwiedzane miasta
+-- 6. Średni wiek amerykańskich podróżników
+-- To zapytanie oblicza średni wiek amerykańskich podróżników
+SELECT ROUND(AVG(Age), 0) AS sredni_wiek
+FROM Travelers
+WHERE Nationality = 'American';
+
+-- ========================
+-- 3. Zapytania o podróże
+-- ========================
+
+-- 7. Najczęściej odwiedzane miasta
+-- To zapytanie zlicza liczbę podróży do każdego miasta
 SELECT City, COUNT(*) AS Number_of_Trips
 FROM Trips
 GROUP BY City
 ORDER BY Number_of_Trips DESC;
 
-9. Wyświetlenie podróży odbywanych przez podróżników w określonym przedziale czasowym (rok 2023).
+-- 8. Podróże w 2023 roku
+-- To zapytanie wyświetla podróże w roku 2023 dla wszystkich podróżników
 SELECT 
     t.Name AS Traveler_Name,
     tr.City,
@@ -180,43 +172,45 @@ JOIN Trip_Travelers tt ON t.TravelerID = tt.TravelerID
 JOIN Trips tr ON tt.TripID = tr.TripID
 WHERE tr.Start_Date BETWEEN '2023-01-01' AND '2023-12-31';
 
-10. Najłuższa podróż:
-SELECT  City, Country, MAX(Duration_Days) AS max_duration_days
+-- 9. Najdłuższa podróż
+-- To zapytanie znajduje najdłuższe podróże na podstawie liczby dni
+SELECT City, Country, MAX(Duration_Days) AS max_duration_days
 FROM Trips
 GROUP BY City, Country
-order by max_duration_days desc
+ORDER BY max_duration_days DESC;
 
-11.
-with podroze as (
-select city, country, avg(duration_days) as srednia
-from trips
-group by city, country 
+-- ========================
+-- 4. Zaawansowane zapytania z WITH i JOIN
+-- ========================
+
+-- 10. Podróże, które trwały dłużej niż średni czas trwania w danym mieście
+WITH podroze AS (
+    SELECT city, country, AVG(duration_days) AS srednia
+    FROM trips
+    GROUP BY city, country 
 )
-select t.city, t.country, t.Duration_Days, p.srednia
-from trips t 
-join podroze p on p.City = t.City and p.Country = t.Country
-where t.Duration_Days > p.srednia
-order by srednia desc
-12.
-select round(avg(age),0) as sredni_wiek
-from Travelers
-where Nationality = 'American'
+SELECT t.city, t.country, t.Duration_Days, p.srednia
+FROM trips t 
+JOIN podroze p ON p.City = t.City AND p.Country = t.Country
+WHERE t.Duration_Days > p.srednia
+ORDER BY srednia DESC;
 
-13.
-select TravelerID
-from Trip_Travelers t
-join trips as tr on t.TripID =tr.TripID
-where tr.Transportation_Type = 'Flight'
+-- 11. Podróżnicy podróżujący samolotem
+SELECT TravelerID
+FROM Trip_Travelers t
+JOIN trips AS tr ON t.TripID = tr.TripID
+WHERE tr.Transportation_Type = 'Flight';
 
-14.
-select City, Country, max(Accommodation_Cost) as max
-from Trips
-where Country != 'USA'
-group by City, Country
-order by Country asc
+-- ========================
+-- 5. Koszty i inne analizy
+-- ========================
 
-
-
+-- 12. Miasta z najwyższym kosztem zakwaterowania (poza USA)
+SELECT City, Country, MAX(Accommodation_Cost) AS max
+FROM Trips
+WHERE Country != 'USA'
+GROUP BY City, Country
+ORDER BY Country ASC;
 
 
 
