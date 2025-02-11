@@ -9,4 +9,10 @@ Ten projekt przedstawia analizę danych podróżniczych z wykorzystaniem SQL. Da
 W projekcie utworzono trzy tabele:
 
 Trips (Informacje o podróżach)
+| Kolumna               | Typ danych      | Opis                           |
+|----------------------|---------------|--------------------------------|
+| TripID              | INT (PK)       | Unikalny identyfikator podróży |
+| City                | VARCHAR(255)   | Miasto                        |
+| Country             | VARCHAR(255)   | Kraj                          |
+
 
