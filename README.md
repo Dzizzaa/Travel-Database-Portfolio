@@ -91,7 +91,7 @@ SELECT
 FROM OPENROWSET('Microsoft.ACE.OLEDB.12.0', 
                 'Excel 12.0; Database=C:\Users\your_username\Documents\cleaned_file_travel_excel.xlsx; HDR=YES', 
                 'SELECT * FROM [a$]');
- ```sql
+ ** ```sql
 -- ========================
 -- 3. Zapytania do tabeli Trips
 -- ========================
