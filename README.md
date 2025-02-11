@@ -180,6 +180,23 @@ JOIN Trip_Travelers tt ON t.TravelerID = tt.TravelerID
 JOIN Trips tr ON tt.TripID = tr.TripID
 WHERE tr.Start_Date BETWEEN '2023-01-01' AND '2023-12-31';
 
+10. Najłuższa podróż:
+SELECT  City, Country, MAX(Duration_Days) AS max_duration_days
+FROM Trips
+GROUP BY City, Country
+order by max_duration_days desc
+
+11.
+with podroze as (
+select city, country, avg(duration_days) as srednia
+from trips
+group by city, country 
+)
+select t.city, t.country, t.Duration_Days, p.srednia
+from trips t 
+join podroze p on p.City = t.City and p.Country = t.Country
+where t.Duration_Days > p.srednia
+order by srednia desc
 
 
 
