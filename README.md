@@ -197,7 +197,23 @@ from trips t
 join podroze p on p.City = t.City and p.Country = t.Country
 where t.Duration_Days > p.srednia
 order by srednia desc
+12.
+select round(avg(age),0) as sredni_wiek
+from Travelers
+where Nationality = 'American'
 
+13.
+select TravelerID
+from Trip_Travelers t
+join trips as tr on t.TripID =tr.TripID
+where tr.Transportation_Type = 'Flight'
+
+14.
+select City, Country, max(Accommodation_Cost) as max
+from Trips
+where Country != 'USA'
+group by City, Country
+order by Country asc
 
 
 
