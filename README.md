@@ -92,4 +92,55 @@ FROM OPENROWSET('Microsoft.ACE.OLEDB.12.0',
                 'Excel 12.0; Database=C:\Users\your_username\Documents\cleaned_file_travel_excel.xlsx; HDR=YES', 
                 'SELECT * FROM [a$]');
 
+-- ========================
+-- Zapytania do tabeli Trips
+-- ========================
+
+-- 1. Liczba podróży według typu zakwaterowania
+-- To zapytanie zlicza liczbę podróży dla każdego typu zakwaterowania
+SELECT 
+    Accommodation_Type,
+    COUNT(*) AS Number_of_Trips
+FROM Trips
+GROUP BY Accommodation_Type
+ORDER BY Number_of_Trips DESC;
+
+-- ========================
+-- Koszty podróży
+-- ========================
+
+-- 2. Całkowity koszt (zakwaterowanie + transport) dla każdej podróży
+-- To zapytanie wylicza całkowity koszt podróży, sumując koszty zakwaterowania i transportu
+SELECT 
+    TripID,
+    City,
+    Country,
+    Start_Date,
+    End_Date,
+    (Accommodation_Cost + Transportation_Cost) AS Total_Cost
+FROM Trips;
+
+-- ========================
+-- Średni koszt podróży na podstawie kraju
+-- ========================
+
+-- 3. Średni koszt podróży w każdym kraju (z zaokrągleniem do 2 miejsc po przecinku)
+-- To zapytanie oblicza średni koszt podróży w danym kraju
+SELECT 
+    Country,
+    AVG(ROUND(Accommodation_Cost + Transportation_Cost, 2)) AS Average_Cost
+FROM Trips
+GROUP BY Country;
+
+-- ========================
+-- Średni koszt podróży na podstawie kraju (z konwersją na liczbę całkowitą)
+-- ========================
+
+-- 4. Średni koszt podróży w każdym kraju z konwersją wyniku na liczbę całkowitą
+-- To zapytanie oblicza średni koszt podróży w danym kraju i zaokrągla wynik do liczby całkowitej
+SELECT 
+    Country,
+    CAST(AVG(ROUND(Accommodation_Cost + Transportation_Cost, 2)) AS INT) AS Average_Cost
+FROM Trips
+GROUP BY Country;
 
