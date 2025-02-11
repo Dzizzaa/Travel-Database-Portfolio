@@ -145,4 +145,30 @@ SELECT
 FROM Trips
 GROUP BY Country;
 
+5. Obliczenie średniego czasu trwania podróży dla każdego kraju.
+SELECT Country, AVG(Duration_Days) AS Average_Duration
+FROM Trips
+GROUP BY Country;
+
+6. Podróżnicy według wieku
+SELECT t.Age, COUNT(*) AS Number_of_Travelers
+FROM Travelers t
+GROUP BY t.Age
+ORDER BY Number_of_Travelers desc
+
+7.Podróżnicy według płci
+SELECT t.Gender,COUNT(*) AS Number_of_Travelers
+FROM Travelers t
+GROUP BY t.Gender;
+
+8.Najczęściej odwiedzane miasta
+SELECT City, COUNT(*) AS Number_of_Trips
+FROM Trips
+GROUP BY City
+ORDER BY Number_of_Trips DESC;
+
+
+
+
+
 
