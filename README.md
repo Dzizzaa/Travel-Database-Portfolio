@@ -41,6 +41,7 @@ W projekcie utworzono trzy tabele:
 | TripID     | INT (FK)   | Identyfikator podróży |
 | TravelerID | INT (FK)   | Identyfikator podróżnika |
 
+
 ## Źródło danych
 
 Dane, które są wstawiane do tabel `Trips` oraz `Travelers`, pochodzą z pliku Excel o nazwie `cleaned_file_travel_excel.xlsx`. Plik zawiera informacje o podróżach oraz podróżnikach i jest wykorzystywany w projekcie do załadowania danych do bazy danych.
@@ -166,6 +167,20 @@ SELECT City, COUNT(*) AS Number_of_Trips
 FROM Trips
 GROUP BY City
 ORDER BY Number_of_Trips DESC;
+
+9. Wyświetlenie podróży odbywanych przez podróżników w określonym przedziale czasowym (rok 2023).
+SELECT 
+    t.Name AS Traveler_Name,
+    tr.City,
+    tr.Country,
+    tr.Start_Date,
+    tr.End_Date
+FROM Travelers t
+JOIN Trip_Travelers tt ON t.TravelerID = tt.TravelerID
+JOIN Trips tr ON tt.TripID = tr.TripID
+WHERE tr.Start_Date BETWEEN '2023-01-01' AND '2023-12-31';
+
+
 
 
 
