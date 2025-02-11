@@ -1,3 +1,5 @@
+---Dodano strukturę bazy danych (schema.sql)
+
 CREATE TABLE Trips (
     TripID INT PRIMARY KEY IDENTITY(1,1),
     City VARCHAR(255),
