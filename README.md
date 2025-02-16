@@ -115,18 +115,31 @@ ORDER BY Number_of_Trips DESC;
 | Guesthouse         | 30              |
 
 
--- 2. Całkowity koszt (zakwaterowanie + transport) dla każdej podróży
+-- 2. Całkowity koszt (zakwaterowanie + transport) dla podróży
 -- To zapytanie wylicza całkowity koszt podróży, sumując koszty zakwaterowania i transportu
-SELECT 
+SELECT TOP 10
     TripID,
     City,
-    Country,
-    Start_Date,
-    End_Date,
     (Accommodation_Cost + Transportation_Cost) AS Total_Cost
-FROM Trips;
+FROM Trips
+ORDER BY Total_Cost desc
 
-![image](https://github.com/user-attachments/assets/5301a7d6-20ea-405a-ab89-3ebef008bfca)
+| TripID | City            | Total Cost |
+|--------|---------------|------------|
+| 131    | New York       | 10500      |
+| 136    | Auckland       | 9500       |
+| 129    | Sydney         | 9000       |
+| 127    | Tokyo          | 8500       |
+| 135    | Barcelona      | 8500       |
+| 133    | Vancouver      | 8000       |
+| 126    | Paris          | 7500       |
+| 130    | Rome           | 5500       |
+| 128    | Cape Town      | 5000       |
+| 132    | Rio de Janeiro | 4500       |
+
+
+
+
 
 
 -- 3. Średni koszt podróży w każdym kraju (z zaokrągleniem do 2 miejsc po przecinku)
