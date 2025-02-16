@@ -140,14 +140,27 @@ ORDER BY Total_Cost desc
 
 
 
-
-
--- 3. Średni koszt podróży w każdym kraju (z zaokrągleniem do 2 miejsc po przecinku)
+-- 3. Średni koszt podróży w każdym kraju (z zaokrągleniem do 0 miejsc po przecinku)
 SELECT 
-    Country,
-    AVG(ROUND(Accommodation_Cost + Transportation_Cost, 2)) AS Average_Cost
+    TOP 10 Country,
+    ROUND(AVG(Accommodation_Cost + Transportation_Cost), 0) AS Average_Cost
 FROM Trips
-GROUP BY Country;
+GROUP BY Country
+ORDER BY AVERAGE_COST  DESC;
+
+| Country               | Total Cost |
+|-----------------------|------------|
+| New Zealand          | 9500       |
+| Hawaii               | 3500       |
+| Canada               | 2992       |
+| USA                  | 2509       |
+| United Arab Emirates | 2300       |
+| Spain                | 2243       |
+| South Africa         | 2175       |
+| Australia            | 2142       |
+| Germany              | 2100       |
+| Indonesia            | 2000       |
+
 
 -- ========================
 -- 2. Zapytania dotyczące podróżników
