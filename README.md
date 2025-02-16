@@ -93,12 +93,13 @@ SELECT
 FROM OPENROWSET('Microsoft.ACE.OLEDB.12.0', 
                 'Excel 12.0; Database=C:\Users\your_username\Documents\cleaned_file_travel_excel.xlsx; HDR=YES', 
                 'SELECT * FROM [a$]');
-3. -- ========================
--- 1. Zapytania dotyczące kosztów
+
+3. **Zapytania**:
+ ```sql
 -- ========================
 
--- 1. Liczba podróży według typu zakwaterowania
--- To zapytanie zlicza liczbę podróży dla każdego typu zakwaterowania
+1. Liczba podróży według typu zakwaterowania
+To zapytanie zlicza liczbę podróży dla każdego typu zakwaterowania
 SELECT 
     Accommodation_Type,
     COUNT(*) AS Number_of_Trips
