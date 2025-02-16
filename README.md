@@ -172,12 +172,48 @@ SELECT t.Age, COUNT(*) AS Number_of_Travelers
 FROM Travelers t
 GROUP BY t.Age
 ORDER BY Number_of_Travelers DESC;
+| Age | Number of Travelers |
+|-----|---------------------|
+| 27  | 12                 |
+| 29  | 12                 |
+| 28  | 11                 |
+| 31  | 11                 |
+| 35  | 10                 |
+| 33  | 9                  |
+| 45  | 8                  |
+| 42  | 7                  |
+| 30  | 7                  |
+| 25  | 7                  |
+| 26  | 6                  |
+| 32  | 4                  |
+| 37  | 4                  |
+| 38  | 4                  |
+| 24  | 4                  |
+| 41  | 4                  |
+| 39  | 3                  |
+| 34  | 2                  |
+| 40  | 1                  |
+| 20  | 1                  |
+| 23  | 1                  |
+| 36  | 1                  |
+| 46  | 1                  |
+| 47  | 1                  |
+| 48  | 1                  |
+| 50  | 1                  |
+| 55  | 1                  |
+| 60  | 1                  |
+| 43  | 1                  |
+
 
 -- 5. Podróżnicy według płci
 -- Zlicza liczbę podróżników w zależności od płci
 SELECT t.Gender, COUNT(*) AS Number_of_Travelers
 FROM Travelers t
 GROUP BY t.Gender;
+| Gender | Number of Travelers |
+|--------|---------------------|
+| Female | 70                  |
+| Male   | 66                  |
 
 -- 6. Średni wiek amerykańskich podróżników
 -- To zapytanie oblicza średni wiek amerykańskich podróżników
@@ -195,6 +231,36 @@ SELECT City, COUNT(*) AS Number_of_Trips
 FROM Trips
 GROUP BY City
 ORDER BY Number_of_Trips DESC;
+
+| City            | Number of Trips |
+|----------------|----------------|
+| Paris          | 15             |
+| Sydney         | 13             |
+| Tokyo          | 13             |
+| Bali           | 12             |
+| New York       | 10             |
+| Bangkok        | 9              |
+| Rome           | 9              |
+| Barcelona      | 7              |
+| London         | 7              |
+| Rio de Janeiro | 6              |
+| Cancun         | 5              |
+| Cape Town      | 4              |
+| Dubai          | 3              |
+| Amsterdam      | 3              |
+| Athens         | 3              |
+| Phuket         | 3              |
+| Vancouver      | 3              |
+| Seoul          | 2              |
+| Honolulu       | 2              |
+| Phnom Penh     | 1              |
+| Auckland       | 1              |
+| Los Angeles    | 1              |
+| Marrakech      | 1              |
+| Edinburgh      | 1              |
+| Berlin         | 1              |
+| Cairo          | 1              |
+
 
 -- 8. Podróże w 2023 roku
 -- To zapytanie wyświetla podróże w roku 2023 dla wszystkich podróżników
@@ -216,6 +282,36 @@ FROM Trips
 GROUP BY City, Country
 ORDER BY max_duration_days DESC;
 
+| City            | Country               | Max Duration (Days) |
+|----------------|----------------------|---------------------|
+| New York       | USA                   | 14                  |
+| Sydney         | Australia             | 13                  |
+| Bali           | Indonesia             | 11                  |
+| Rome           | Italy                 | 11                  |
+| London         | UK                    | 11                  |
+| Tokyo          | Japan                 | 10                  |
+| Cancun         | Mexico                | 10                  |
+| Seoul          | South Korea           | 10                  |
+| Athens         | Greece                | 10                  |
+| Honolulu       | Hawaii                | 9                   |
+| Paris          | France                | 9                   |
+| Berlin         | Germany               | 9                   |
+| Rio de Janeiro | Brazil                | 9                   |
+| Cape Town      | South Africa          | 9                   |
+| Dubai          | United Arab Emirates  | 8                   |
+| Amsterdam      | Netherlands           | 8                   |
+| Barcelona      | Spain                 | 8                   |
+| Bangkok        | Thailand              | 8                   |
+| Phuket         | Thailand              | 7                   |
+| Marrakech      | Morocco               | 7                   |
+| Vancouver      | Canada                | 7                   |
+| Cairo          | Egypt                 | 7                   |
+| Auckland       | New Zealand           | 7                   |
+| Edinburgh      | Scotland              | 7                   |
+| Los Angeles    | USA                   | 7                   |
+| Phnom Penh     | Cambodia              | 5                   |
+
+
 -- ========================
 -- 4. Zaawansowane zapytania z WITH i JOIN
 -- ========================
@@ -230,24 +326,57 @@ SELECT t.city, t.country, t.Duration_Days, p.srednia
 FROM trips t 
 JOIN podroze p ON p.City = t.City AND p.Country = t.Country
 WHERE t.Duration_Days > p.srednia
-ORDER BY srednia DESC;
+ORDER BY p.srednia DESC;
 
 -- 11. Podróżnicy podróżujący samolotem
-SELECT TravelerID
+SELECT tra.TravelerID, tra.Name
 FROM Trip_Travelers t
 JOIN trips AS tr ON t.TripID = tr.TripID
+JOIN Travelers as tra on tra.TravelerID = t.TravelerID
 WHERE tr.Transportation_Type = 'Flight';
+
+| TravelerID | Name            |
+|------------|----------------|
+| 1          | John Smith     |
+| 2          | Jane Doe       |
+| 3          | David Lee      |
+| 4          | Sarah Johnson  |
+| 6          | Michael Brown  |
+| 7          | Emily Davis    |
+| 8          | Lucas Santos   |
+| 10         | Mohammed Ali   |
+| 11         | Ana Hernandez  |
+| 13         | Lily Wong      |
+| 14         | Hans Mueller   |
+| 15         | Fatima Khouri  |
+| 53         | Jessica Wong   |
+
+
 
 -- ========================
 -- 5. Koszty i inne analizy
 -- ========================
 
 -- 12. Miasta z najwyższym kosztem zakwaterowania (poza USA)
-SELECT City, Country, MAX(Accommodation_Cost) AS max
+SELECT TOP 10 City, Country, MAX(Accommodation_Cost) AS max
 FROM Trips
 WHERE Country != 'USA'
 GROUP BY City, Country
-ORDER BY Country ASC;
+ORDER BY max DESC;
 
+
+
+| City            | Country         | Max Cost |
+|----------------|----------------|----------|
+| Tokyo          | Japan           | 7000     |
+| Auckland       | New Zealand     | 7000     |
+| Sydney         | Australia       | 6000     |
+| Barcelona      | Spain           | 6000     |
+| Vancouver      | Canada          | 5000     |
+| Paris          | France          | 5000     |
+| Rome           | Italy           | 4000     |
+| Honolulu       | Hawaii          | 3000     |
+| Cape Town      | South Africa    | 3000     |
+| Rio de Janeiro | Brazil          | 2500     |
 
 
