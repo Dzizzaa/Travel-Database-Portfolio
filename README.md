@@ -81,6 +81,7 @@ Dane z pliku Excel są importowane do bazy danych przy użyciu poniższych zapyt
    FROM OPENROWSET('Microsoft.ACE.OLEDB.12.0', 
                    'Excel 12.0; Database=C:\Users\your_username\Documents\cleaned_file_travel_excel.xlsx; HDR=YES', 
                    'SELECT * FROM [a$]');
+  
 2. **Załaduj dane do tabeli `Travelers`**:
  ```sql
 INSERT INTO Travelers (Name, Age, Gender, Nationality)
@@ -92,9 +93,7 @@ SELECT
 FROM OPENROWSET('Microsoft.ACE.OLEDB.12.0', 
                 'Excel 12.0; Database=C:\Users\your_username\Documents\cleaned_file_travel_excel.xlsx; HDR=YES', 
                 'SELECT * FROM [a$]');
-3. **Załaduj dane do tabeli `Travelers`**:
- ```sql
--- ========================
+3. -- ========================
 -- 1. Zapytania dotyczące kosztów
 -- ========================
 
