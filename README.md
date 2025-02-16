@@ -126,6 +126,9 @@ SELECT
     (Accommodation_Cost + Transportation_Cost) AS Total_Cost
 FROM Trips;
 
+![image](https://github.com/user-attachments/assets/5301a7d6-20ea-405a-ab89-3ebef008bfca)
+
+
 -- 3. Średni koszt podróży w każdym kraju (z zaokrągleniem do 2 miejsc po przecinku)
 SELECT 
     Country,
