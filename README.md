@@ -356,7 +356,8 @@ WHERE tr.Transportation_Type = 'Flight';
 -- 5. Koszty i inne analizy
 -- ========================
 
--- 12. Miasta z najwyższym kosztem zakwaterowania (poza USA)
+-- 12. Miasta z najwyższym kosztem zakwaterowania (poza USA):
+
 SELECT TOP 10 City, Country, MAX(Accommodation_Cost) AS max
 FROM Trips
 WHERE Country != 'USA'
@@ -377,3 +378,42 @@ ORDER BY max DESC;
 | Honolulu       | Hawaii          | 3000     |
 | Cape Town      | South Africa    | 3000     |
 | Rio de Janeiro | Brazil          | 2500     |
+
+
+--13. Koszty transportu w zależności od typu transportu:
+SELECT Transportation_Type, round(AVG(Transportation_Cost),0) AS avg_transport_cost
+FROM Trips
+GROUP BY Transportation_Type
+ORDER BY avg_transport_cost DESC;
+| Transportation Type | Cost  |
+|---------------------|-------|
+| Airplane            | 2700  |
+| Car                 | 1433  |
+| Flight              | 754   |
+| Plane               | 754   |
+| Train               | 345   |
+| Car rental          | 296   |
+| Ferry               | 150   |
+| Bus                 | 71    |
+| Subway              | 20    |
+
+14. Podróżnicy, którzy odwiedzili miasta w danym roku 2025:
+
+SELECT t.Name
+FROM Travelers t
+WHERE EXISTS (
+    SELECT 1
+    FROM Trip_Travelers tt
+    JOIN Trips tr ON tt.TripID = tr.TripID
+    WHERE tt.TravelerID = t.TravelerID
+    AND YEAR(tr.Start_Date) = 2025
+);
+
+| Name             |
+|------------------|
+| Marco Rossi      |
+| Sarah Brown      |
+| Emma Watson      |
+
+
+
