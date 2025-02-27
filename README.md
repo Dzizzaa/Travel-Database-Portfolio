@@ -65,7 +65,7 @@ Plik `cleaned_file_travel_excel.xlsx` ma następującą strukturę:
 
 Dane z pliku Excel są importowane do bazy danych przy użyciu poniższych zapytań SQL:
 
-1. **Załaduj dane do tabeli `Trips`**:
+1. **Załadadowanie danych do tabeli `Trips`**:
    ```sql
    INSERT INTO Trips (City, Country, Start_Date, End_Date, Duration_Days, Accommodation_Type, Accommodation_Cost, Transportation_Type, Transportation_Cost)
    SELECT 
@@ -81,7 +81,7 @@ Dane z pliku Excel są importowane do bazy danych przy użyciu poniższych zapyt
    FROM OPENROWSET('Microsoft.ACE.OLEDB.12.0', 
                    'Excel 12.0; Database=C:\Users\your_username\Documents\cleaned_file_travel_excel.xlsx; HDR=YES', 
                    'SELECT * FROM [a$]');
-2. **Załaduj dane do tabeli `Travelers`**:
+2. **Załadowanie danych do tabeli `Travelers`**:
 ```sql
 INSERT INTO Travelers (Name, Age, Gender, Nationality)
 SELECT  
