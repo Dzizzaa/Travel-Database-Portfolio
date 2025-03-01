@@ -53,6 +53,26 @@ Suma kosztów zakwaterowania – całkowity koszt zakwaterowania
 Informacje te są wyświetlane za pomocą **tooltipu**, który pojawiają się po najechaniu na bąbelek.
 
 ![image](https://github.com/user-attachments/assets/e9832148-7228-4a35-83d5-74e1465a8e56)
+![image](https://github.com/user-attachments/assets/3a8d4653-b73c-48d6-82e5-a735eae9bfdd)
+
+## Strona 2 - Raport
+
+
+Na drugiej stronie raportu znajdują się następujące wizualizacje:
+
+- **Fragmentator z krajami**: Umożliwia wybór kraju, co pozwala na dynamiczne filtrowanie danych.
+- **Karta z liczbą miast i krajów oraz liczbą podróży**: Prezentuje ogólną liczbę odwiedzonych miejsc oraz odbytych podróży.
+- **Fragmentator roku**: Pozwala na wybór roku, umożliwiając analizę danych w zależności od okresu.
+- **Wykres kołowy - Podział płci**: Wizualizuje procentowy rozkład płci podróżników.
+- **Wykres słupkowy grupowy - Dni spędzone w poszczególnych krajach**: Przedstawia liczbę dni spędzonych przez podróżników w różnych krajach.
+- **Wykres kołowy - Koszty transportu**: Pokazuje udział kosztów transportu w ogólnych wydatkach podróży.
+- **Wykres kołowy - Koszty zakwaterowania**: Wizualizuje podział kosztów zakwaterowania.
+- **Wykres słupkowy - Całkowity koszt dla poszczególnych krajów**: Prezentuje łączny koszt podróży w różnych krajach.
+- **Mapa drzewa - Narodowość i typ zakwaterowania**: Wizualizuje dane dotyczące narodowości podróżników oraz preferencje dotyczące zakwaterowania.
+  
+
+![Zrzut ekranu 2025-03-01 132815](https://github.com/user-attachments/assets/3ec4eb16-43d7-47e0-a179-656d601d958f)
+
 
 
 
