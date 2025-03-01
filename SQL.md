@@ -328,6 +328,93 @@ FROM trips t
 JOIN trips p ON p.City = t.City AND p.Country = t.Country
 WHERE t.Duration_Days > p.average;
 
+-- 11. Air travelers
+SELECT tra.TravelerID, tra.Name
+FROM Trip_Travelers t
+JOIN trips AS tr ON t.TripID = tr.TripID
+JOIN Travelers as tra on tra.TravelerID = t.TravelerID
+WHERE tr.Transportation_Type = 'Flight';
+
+| TravelerID | Name            |
+|------------|----------------|
+| 1          | John Smith     |
+| 2          | Jane Doe       |
+| 3          | David Lee      |
+| 4          | Sarah Johnson  |
+| 6          | Michael Brown  |
+| 7          | Emily Davis    |
+| 8          | Lucas Santos   |
+| 10         | Mohammed Ali   |
+| 11         | Ana Hernandez  |
+| 13         | Lily Wong      |
+| 14         | Hans Mueller   |
+| 15         | Fatima Khouri  |
+| 53         | Jessica Wong   |
+
+
+
+-- ========================
+-- 5. Costs and other analyses
+-- ========================
+
+-- 12. Cities with the highest accommodation costs (excluding the USA):
+
+SELECT TOP 10 City, Country, MAX(Accommodation_Cost) AS max
+FROM Trips
+WHERE Country != 'USA'
+GROUP BY City, Country
+ORDER BY max DESC;
+
+
+
+| City            | Country         | Max Cost |
+|----------------|----------------|----------|
+| Tokyo          | Japan           | 7000     |
+| Auckland       | New Zealand     | 7000     |
+| Sydney         | Australia       | 6000     |
+| Barcelona      | Spain           | 6000     |
+| Vancouver      | Canada          | 5000     |
+| Paris          | France          | 5000     |
+| Rome           | Italy           | 4000     |
+| Honolulu       | Hawaii          | 3000     |
+| Cape Town      | South Africa    | 3000     |
+| Rio de Janeiro | Brazil          | 2500     |
+
+
+--13. Transportation costs depending on the type of transport:
+SELECT Transportation_Type, round(AVG(Transportation_Cost),0) AS avg_transport_cost
+FROM Trips
+GROUP BY Transportation_Type
+ORDER BY avg_transport_cost DESC;
+| Transportation Type | Cost  |
+|---------------------|-------|
+| Airplane            | 2700  |
+| Car                 | 1433  |
+| Flight              | 754   |
+| Plane               | 754   |
+| Train               | 345   |
+| Car rental          | 296   |
+| Ferry               | 150   |
+| Bus                 | 71    |
+| Subway              | 20    |
+
+14. Travelers who visited cities in the year 2025:
+
+SELECT t.Name
+FROM Travelers t
+WHERE EXISTS (
+    SELECT 1
+    FROM Trip_Travelers tt
+    JOIN Trips tr ON tt.TripID = tr.TripID
+    WHERE tt.TravelerID = t.TravelerID
+    AND YEAR(tr.Start_Date) = 2025
+);
+
+| Name             |
+|------------------|
+| Marco Rossi      |
+| Sarah Brown      |
+| Emma Watson      |
 
 
 
