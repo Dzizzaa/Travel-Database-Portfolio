@@ -49,15 +49,17 @@ The data inserted into the Trips and Travelers tables comes from the Excel file 
 ## Data Import into the Database
 Data is imported into the SQL Server database using SQL queries from the Excel file cleaned_file_travel_excel.xlsx. The Excel file contains trip and traveler data, which are inserted into the appropriate tables in the database.
 
-## Excel File Structure:
-The file cleaned_file_travel_excel.xlsx has the following structure:
+### Excel File Structure:
 
-Sheet: a$
-Columns in the Excel file:
-Trips:
-City, Country, Start date, End date, Duration (days), Accommodation type, Accommodation cost, Transportation type, Transportation cost
-Travelers:
-Traveler name, Traveler age, Traveler gender, Traveler nationality
+The file `cleaned_file_travel_excel.xlsx`has the following structure:
+
+- **Sheet**: `a$`
+- **Columns** in the Excel file
+  - **Trips**:
+    - `City`, `Country`, `Start date`, `End date`, `Duration (days)`, `Accommodation type`, `Accommodation cost`, `Transportation type`, `Transportation cost`
+  - **Travelers**:
+    - `Traveler name`, `Traveler age`, `Traveler gender`, `Traveler nationality`
+   
 
 ![image](https://github.com/user-attachments/assets/9cf42291-326d-4856-86d2-7314cca47fd1)
 
