@@ -5,6 +5,7 @@ Projekt zawiera bazę danych do zarządzania informacjami o podróżach. Baza da
 
 Ten projekt przedstawia analizę danych podróżniczych z wykorzystaniem SQL. Dane pochodzą z publicznie dostępnego zbioru na Kaggle:https://www.kaggle.com/datasets/rkiattisak/traveler-trip-data
 
+Skorzystałam z narzędzia Microsoft SQL Server Management Studio, aby stworzyć bazę danych o nazwie TRIP. Do bazy dodałam wcześniej oczyszczony plik z danymi pochodzącymi z Kaggle. Utworzyłam odpowiednie tabele oraz przygotowałam diagramy bazy danych. Następnie rozpoczęłam pisanie zapytań SQL.
 ![image](https://github.com/user-attachments/assets/937ba0b1-7335-4115-ad79-d8f7d8751f6b)
 ![image](https://github.com/user-attachments/assets/b2b52a4f-8692-4eb5-bdfd-272aec4d8955)
 
