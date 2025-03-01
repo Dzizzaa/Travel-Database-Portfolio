@@ -44,16 +44,16 @@ Raport pozwala na szczegółową analizę danych podróży, umożliwiając dynam
 
 Na pierwszej stronie raportu znajduje się Mapa świata z etykietami, która prezentuje dane w postaci interaktywnej mapy. Po najechaniu na dany kraj, wyświetlają się następujące informacje:
 
-- Kraj – nazwa kraju
-- Całkowity koszt – całkowity koszt podróży w tym kraju
-- Suma kosztów transportu – całkowity koszt transportu
-- Średnia liczba dni – tooltip -średnia liczba dni spędzonych w tym kraju
-- Suma kosztów zakwaterowania – całkowity koszt zakwaterowania
+- Country – nazwa kraju
+- Total_Cost – całkowity koszt podróży w tym kraju
+- Transporartion_Cost – całkowity koszt transportu
+- AVG days – tooltip -średnia liczba dni spędzonych w tym kraju
+- Accommodation_Cost – całkowity koszt zakwaterowania
 
+![image](https://github.com/user-attachments/assets/5b037173-df90-4aa1-9aee-d0783698c62d)
 
+![image](https://github.com/user-attachments/assets/ebd61c7f-c55c-4d94-b86e-4c4b918285c5)
 
-![image](https://github.com/user-attachments/assets/e9832148-7228-4a35-83d5-74e1465a8e56)
-![image](https://github.com/user-attachments/assets/3a8d4653-b73c-48d6-82e5-a735eae9bfdd)
 
 ## Strona 2 - Raport
 
@@ -71,8 +71,10 @@ Na drugiej stronie raportu znajdują się następujące wizualizacje:
 - **Mapa drzewa - Narodowość i typ zakwaterowania**: Wizualizuje dane dotyczące narodowości podróżników oraz preferencje dotyczące zakwaterowania.
   
 
-![Zrzut ekranu 2025-03-01 132815](https://github.com/user-attachments/assets/3ec4eb16-43d7-47e0-a179-656d601d958f)
 
+
+
+![Zrzut ekranu 2025-03-01 132801](https://github.com/user-attachments/assets/523e4189-801f-478e-ac33-d579ebf47abc)
 
 
 
