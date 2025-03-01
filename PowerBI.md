@@ -26,10 +26,10 @@ Raport pozwala na szczegółową analizę danych podróży, umożliwiając dynam
 
 ## Utworzone miary
 
-- **liczbakrajow** – liczba odwiedzonych krajów,
-- **liczbamiast** – liczba miast odwiedzonych w ramach podróży,
-- **srednialiczbadni** – średnia liczba dni spędzonych w danym kraju lub mieście,
-- **totalcost** – całkowity koszt podróży.
+- **LiczbaKrajow** – liczba odwiedzonych krajów,
+- **LiczbaMiast** – liczba miast odwiedzonych w ramach podróży,
+- **ŚredniaLiczbaDni** – średnia liczba dni spędzonych w danym kraju lub mieście,
+- **TotalCost** – całkowity koszt podróży.
 
 ## Miary czasowe
 
