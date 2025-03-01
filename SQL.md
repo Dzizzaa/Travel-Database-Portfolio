@@ -10,7 +10,7 @@ Następnie rozpoczęłam pisanie zapytań SQL.
 
 
 ![image](https://github.com/user-attachments/assets/937ba0b1-7335-4115-ad79-d8f7d8751f6b)
-![image](https://github.com/user-attachments/assets/b2b52a4f-8692-4eb5-bdfd-272aec4d8955)
+
 
 
 ##  Struktura bazy danych
@@ -50,6 +50,8 @@ W projekcie utworzono trzy tabele:
 | TravelerID | INT (FK)   | Identyfikator podróżnika |
 
 
+![image](https://github.com/user-attachments/assets/b2b52a4f-8692-4eb5-bdfd-272aec4d8955)
+
 ## Źródło danych
 
 Dane, które są wstawiane do tabel `Trips` oraz `Travelers`, pochodzą z pliku Excel o nazwie `cleaned_file_travel_excel.xlsx`. Plik zawiera informacje o podróżach oraz podróżnikach i jest wykorzystywany w projekcie do załadowania danych do bazy danych.
@@ -68,6 +70,10 @@ Plik `cleaned_file_travel_excel.xlsx` ma następującą strukturę:
     - `City`, `Country`, `Start date`, `End date`, `Duration (days)`, `Accommodation type`, `Accommodation cost`, `Transportation type`, `Transportation cost`
   - **Travelers**:
     - `Traveler name`, `Traveler age`, `Traveler gender`, `Traveler nationality`
+   
+![image](https://github.com/user-attachments/assets/9cf42291-326d-4856-86d2-7314cca47fd1)
+
+
 
 ### Zapytania SQL do importu danych
 
