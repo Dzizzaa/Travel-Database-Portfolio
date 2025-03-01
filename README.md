@@ -11,7 +11,7 @@ To repozytorium zawiera projekt bazy danych podróży, który umożliwia zarząd
 - **`SQL.md`** - Opis projektu SQL
 - **`PowerBI.md`** – Opis raportów Power BI.
 - **`insert_trips.sql`** – Skrypt do wstawiania danych do tabeli `trips`.
-- **`sql/schema.sql`** – Skrypt do tworzenia schematu bazy danych.
+- **`schema.sql`** – Skrypt do tworzenia schematu bazy danych.
 
 
 
