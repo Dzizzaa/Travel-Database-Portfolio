@@ -140,7 +140,7 @@ ORDER BY Total_Cost DESC;
 | 128    | Cape Town       | 5000       |
 | 132    | Rio de Janeiro  | 4500       |
 
--- 3. **Average trip cost in each country (rounded to 0 decimal places)**
+-- 3. Average trip cost in each country (rounded to 0 decimal places)
 
 SELECT 
     TOP 10 Country,
@@ -163,10 +163,10 @@ ORDER BY Average_Cost DESC;
 | Indonesia             | 2000       |
 
 -- ========================
--- 2. **Traveler queries**
+-- 2. Traveler queries
 -- ========================
 
--- 4. **Travelers by age**
+-- 4. Travelers by age
 -- This query counts the number of travelers by age
 
 SELECT t.Age, COUNT(*) AS Number_of_Travelers
@@ -206,7 +206,7 @@ ORDER BY Number_of_Travelers DESC;
 | 60  | 1                  |
 | 43  | 1                  |
 
--- 5. **Travelers by gender**
+-- 5. Travelers by gender
 -- Counts the number of travelers by gender
 
 SELECT t.Gender, COUNT(*) AS Number_of_Travelers
@@ -218,7 +218,7 @@ GROUP BY t.Gender;
 | Female | 70                  |
 | Male   | 66                  |
 
--- 6. **Average age of American travelers**
+-- 6. Average age of American travelers
 -- This query calculates the average age of American travelers
 SELECT ROUND(AVG(Age), 0) AS average_age
 FROM Travelers
@@ -228,7 +228,7 @@ WHERE Nationality = 'American';
 -- 3. **Trip queries**
 -- ========================
 
--- 7. **Most visited cities**
+-- 7. Most visited cities
 -- This query counts the number of trips to each city
 SELECT City, COUNT(*) AS Number_of_Trips
 FROM Trips
@@ -264,7 +264,7 @@ ORDER BY Number_of_Trips DESC;
 | Berlin          | 1               |
 | Cairo           | 1               |
 
--- 8. **Trips in 2023**
+-- 8. Trips in 2023
 -- This query displays trips made in 2023 for all travelers
 SELECT 
     t.Name AS Traveler_Name,
@@ -277,7 +277,7 @@ JOIN Trip_Travelers tt ON t.TravelerID = tt.TravelerID
 JOIN Trips tr ON tt.TripID = tr.TripID
 WHERE tr.Start_Date BETWEEN '2023-01-01' AND '2023-12-31';
 
--- 9. **Longest trip**
+-- 9. Longest trip
 -- This query finds the longest trips based on the number of days
 SELECT City, Country, MAX(Duration_Days) AS max_duration_days
 FROM Trips
@@ -314,10 +314,10 @@ ORDER BY max_duration_days DESC;
 | Phnom Penh      | Cambodia              | 5                   |
 
 -- ========================
--- 4. **Advanced queries with WITH and JOIN**
+-- 4. Advanced queries with WITH and JOIN
 -- ========================
 
--- 10. **Trips longer than the average duration in the same city**
+-- 10. Trips longer than the average duration in the same city
 WITH trips AS (
     SELECT city, country, AVG(duration_days) AS average
     FROM trips
