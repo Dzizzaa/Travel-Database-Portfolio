@@ -24,4 +24,20 @@ Dane do analizy zostały pobrane z publicznego zbioru danych "Traveler Trip Data
 ## Zakres projektu
 Raport pozwala na szczegółową analizę danych podróży, umożliwiając dynamiczne filtrowanie i interakcję z danymi. Dzięki zastosowaniu różnych typów wizualizacji, takich jak wykresy kołowe, słupkowe i mapy, użytkownik może łatwo uzyskać informacje na temat wydatków, czasu podróży i innych istotnych aspektów podróży w różnych krajach.
 
+## Utworzone miary
+
+- **liczbakrajow** – liczba odwiedzonych krajów,
+- **liczbamiast** – liczba miast odwiedzonych w ramach podróży,
+- **srednialiczbadni** – średnia liczba dni spędzonych w danym kraju lub mieście,
+- **totalcost** – całkowity koszt podróży.
+
+## Miary czasowe
+
+- **Year_Start** – miara obliczająca rok rozpoczęcia podróży na podstawie daty początkowej:
+  ```DAX
+  Year_Start = YEAR('Trips'[Start_Date])
+- **Total_Travel_Days** – miara sumująca liczbę dni podróż:
+  ```DAX
+  Total_Travel_Days = SUM('Trips'[Duration_Days])
+
 
