@@ -225,7 +225,7 @@ FROM Travelers
 WHERE Nationality = 'American';
 
 -- ========================
--- 3. **Trip queries**
+-- 3. Trip queries
 -- ========================
 
 -- 7. Most visited cities
