@@ -44,11 +44,11 @@ Raport pozwala na szczegółową analizę danych podróży, umożliwiając dynam
 
 Na pierwszej stronie raportu znajduje się Mapa świata z bąbelkami, która prezentuje dane w postaci interaktywnej mapy. Po najechaniu na bąbelek w danym kraju, wyświetlają się następujące informacje:
 
-Kraj – nazwa kraju
-Całkowity koszt – całkowity koszt podróży w tym kraju
-Suma kosztów transportu – całkowity koszt transportu
-Średnia liczba dni – średnia liczba dni spędzonych w tym kraju
-Suma kosztów zakwaterowania – całkowity koszt zakwaterowania
+- Kraj – nazwa kraju
+- Całkowity koszt – całkowity koszt podróży w tym kraju
+- Suma kosztów transportu – całkowity koszt transportu
+- Średnia liczba dni – średnia liczba dni spędzonych w tym kraju
+- Suma kosztów zakwaterowania – całkowity koszt zakwaterowania
 
 Informacje te są wyświetlane za pomocą **tooltipu**, który pojawiają się po najechaniu na bąbelek.
 
