@@ -5,6 +5,10 @@ Projekt zawiera bazę danych do zarządzania informacjami o podróżach. Baza da
 
 Ten projekt przedstawia analizę danych podróżniczych z wykorzystaniem SQL. Dane pochodzą z publicznie dostępnego zbioru na Kaggle:https://www.kaggle.com/datasets/rkiattisak/traveler-trip-data
 
+![image](https://github.com/user-attachments/assets/937ba0b1-7335-4115-ad79-d8f7d8751f6b)
+![image](https://github.com/user-attachments/assets/b2b52a4f-8692-4eb5-bdfd-272aec4d8955)
+
+
 ##  Struktura bazy danych
 W projekcie utworzono trzy tabele:
 
