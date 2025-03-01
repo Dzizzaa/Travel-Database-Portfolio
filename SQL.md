@@ -42,7 +42,6 @@ The project consists of three tables:
 | TravelerID | INT (FK)   | Traveler identifier |
 
 
-![image](https://github.com/user-attachments/assets/b2b52a4f-8692-4eb5-bdfd-272aec4d8955)
 
 ## Data Source
 The data inserted into the Trips and Travelers tables comes from the Excel file cleaned_file_travel_excel.xlsx. The file contains information about trips and travelers and is used in this project to load data into the database.
@@ -383,7 +382,8 @@ W projekcie utworzono trzy tabele:
 | TravelerID | INT (FK)   | Identyfikator podróżnika |
 
 
-![image](https://github.com/user-attachments/assets/b2b52a4f-8692-4eb5-bdfd-272aec4d8955)
+
+
 
 ## Źródło danych
 
@@ -404,7 +404,7 @@ Plik `cleaned_file_travel_excel.xlsx` ma następującą strukturę:
   - **Travelers**:
     - `Traveler name`, `Traveler age`, `Traveler gender`, `Traveler nationality`
    
-![image](https://github.com/user-attachments/assets/9cf42291-326d-4856-86d2-7314cca47fd1)
+
 
 
 
