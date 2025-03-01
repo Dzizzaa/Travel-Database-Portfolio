@@ -82,19 +82,19 @@ Dane z pliku Excel są importowane do bazy danych przy użyciu poniższych zapyt
                    'Excel 12.0; Database=C:\Users\your_username\Documents\cleaned_file_travel_excel.xlsx; HDR=YES', 
                    'SELECT * FROM [a$]');
 2. **Załadowanie danych do tabeli `Travelers`**:
-```sql
-INSERT INTO Travelers (Name, Age, Gender, Nationality)
-SELECT  
+  ```sql
+  INSERT INTO Travelers (Name, Age, Gender, Nationality)
+  SELECT  
     [Traveler name], 
     [Traveler age], 
     [Traveler gender], 
     [Traveler nationality]
-FROM OPENROWSET('Microsoft.ACE.OLEDB.12.0', 
+  FROM OPENROWSET('Microsoft.ACE.OLEDB.12.0', 
                 'Excel 12.0; Database=C:\Users\your_username\Documents\cleaned_file_travel_excel.xlsx; HDR=YES', 
                 'SELECT * FROM [a$]');
 
 3. **Zapytania**:
--- ========================
+  -- ========================
 1. Liczba podróży według typu zakwaterowania
 To zapytanie zlicza liczbę podróży dla każdego typu zakwaterowania
 SELECT 
