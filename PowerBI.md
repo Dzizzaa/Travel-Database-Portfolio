@@ -16,7 +16,7 @@ Projekt przedstawia interaktywną analizę danych podróży z wykorzystaniem Pow
 - **Wykres kołowy - Koszty zakwaterowania**: Wizualizuje podział kosztów zakwaterowania.
 - **Wykres słupkowy - Całkowity koszt dla poszczególnych krajów**: Prezentuje łączny koszt podróży w różnych krajach.
 - **Mapa drzewa - Narodowość i typ zakwaterowania**: Wizualizuje dane dotyczące narodowości podróżników oraz preferencje dotyczące zakwaterowania.
-- **Mapa świata z bąbelkami**: Prezentuje dane w postaci mapy, gdzie po najechaniu na bąbelek w danym kraju wyświetlają się informacje: kraj, całkowity koszt, suma kosztów transportu, średnia liczba dni oraz suma kosztów zakwaterowania (przy użyciu tooltips).
+- **Mapa świata z bąbelkami**: Prezentuje dane w postaci mapy, gdzie po najechaniu na bąbelek w danym kraju wyświetlają się informacje: kraj, całkowity koszt, suma kosztów transportu, średnia liczba dni oraz suma kosztów zakwaterowania (przy użyciu tooltipu).
 
 ## Źródło danych
 Dane do analizy zostały pobrane z publicznego zbioru danych "Traveler Trip Data" dostępnego na platformie Kaggle. Zawierają one informacje o podróżach oraz o podróżnikach, w tym ich narodowości, czas podróży oraz koszty związane z transportem i zakwaterowaniem.
@@ -38,6 +38,22 @@ Raport pozwala na szczegółową analizę danych podróży, umożliwiając dynam
   Year_Start = YEAR('Trips'[Start_Date])
 - **Total_Travel_Days** – miara sumująca liczbę dni podróż:
   ```DAX
-  Total_Travel_Days = SUM('Trips'[Duration_Days])
+  Total_Travel_Days = SUM('Trips'[Duration_Days]) 
+
+## Strona 1 - Mapa Świata z Bąbelkami
+
+Na pierwszej stronie raportu znajduje się Mapa świata z bąbelkami, która prezentuje dane w postaci interaktywnej mapy. Po najechaniu na bąbelek w danym kraju, wyświetlają się następujące informacje:
+
+Kraj – nazwa kraju
+Całkowity koszt – całkowity koszt podróży w tym kraju
+Suma kosztów transportu – całkowity koszt transportu
+Średnia liczba dni – średnia liczba dni spędzonych w tym kraju
+Suma kosztów zakwaterowania – całkowity koszt zakwaterowania
+
+Informacje te są wyświetlane za pomocą **tooltipu**, który pojawiają się po najechaniu na bąbelek.
+
+![image](https://github.com/user-attachments/assets/e9832148-7228-4a35-83d5-74e1465a8e56)
+
+
 
 
