@@ -63,7 +63,8 @@ Traveler name, Traveler age, Traveler gender, Traveler nationality
 ![image](https://github.com/user-attachments/assets/9cf42291-326d-4856-86d2-7314cca47fd1)
 
 
-## SQL Queries for Data Import
+
+# SQL Queries for Data Import
 Data from the Excel file is imported into the database using the following SQL queries:
 
 1. **Loading data into the `Trips` table**:
