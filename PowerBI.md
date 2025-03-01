@@ -10,7 +10,7 @@ Projekt przedstawia interaktywną analizę danych podróży z wykorzystaniem Pow
 - **Fragmentator z krajami**: Umożliwia wybór kraju, co pozwala na dynamiczne filtrowanie danych.
 - **Karta z liczbą miast i krajów oraz liczba podróży**: Prezentuje ogólną liczbę odwiedzonych miejsc i odbytych podróży.
 - **Fragmentator roku**: Pozwala na wybór roku, umożliwiając analizę danych w zależności od okresu.
-- **Wykres kołowy - Podział płci**: Wizualizuje procentowy rozkład płci podróżników.
+- **Wykres kołowy - Podział płci**: Wizualizuje rozkład płci podróżników.
 - **Wykres słupkowy grupowy - Dni spędzone w poszczególnych krajach**: Przedstawia liczbę dni spędzonych przez podróżników w różnych krajach.
 - **Wykres kołowy - Koszty transportu**: Pokazuje udział kosztów transportu w ogólnych wydatkach podróży.
 - **Wykres kołowy - Koszty zakwaterowania**: Wizualizuje podział kosztów zakwaterowania.
