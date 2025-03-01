@@ -9,7 +9,7 @@ This repository contains a travel database project that allows managing travel-r
 
 ## Files in the Repository:
 - **SQL.md** – Description of the SQL project in English
-- **PL SQL.md - Description of the SQL project in Polish
+- **PL SQL.md** - Description of the SQL project in Polish
 - **PowerBI.md** – Description of Power BI reports
 - **insert_trips.sql** – Script for inserting data into the trips table
 - **schema.sql** – Script for creating the database schema
@@ -31,7 +31,7 @@ To repozytorium zawiera projekt bazy danych podróży, który umożliwia zarząd
 
 ## Pliki w repozytorium:
 - **`SQL.md`** - Opis projektu SQL po angielsku
-- **PL SQL.md - Opis projektu SQL po polsku
+- **`PL SQL.md`**- Opis projektu SQL po polsku
 - **`PowerBI.md`** – Opis raportów Power BI.
 - **`insert_trips.sql`** – Skrypt do wstawiania danych do tabeli `trips`.
 - **`schema.sql`** – Skrypt do tworzenia schematu bazy danych.
