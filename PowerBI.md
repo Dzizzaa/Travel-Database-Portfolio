@@ -47,10 +47,10 @@ Na pierwszej stronie raportu znajduje się Mapa świata z bąbelkami, która pre
 - Kraj – nazwa kraju
 - Całkowity koszt – całkowity koszt podróży w tym kraju
 - Suma kosztów transportu – całkowity koszt transportu
-- Średnia liczba dni – średnia liczba dni spędzonych w tym kraju
+- Średnia liczba dni – tooltip -średnia liczba dni spędzonych w tym kraju
 - Suma kosztów zakwaterowania – całkowity koszt zakwaterowania
 
-Informacje te są wyświetlane za pomocą **tooltipu**, który pojawiają się po najechaniu na bąbelek.
+
 
 ![image](https://github.com/user-attachments/assets/e9832148-7228-4a35-83d5-74e1465a8e56)
 ![image](https://github.com/user-attachments/assets/3a8d4653-b73c-48d6-82e5-a735eae9bfdd)
