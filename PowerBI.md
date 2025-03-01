@@ -16,7 +16,7 @@ Projekt przedstawia interaktywną analizę danych podróży z wykorzystaniem Pow
 - **Wykres kołowy - Koszty zakwaterowania**: Wizualizuje podział kosztów zakwaterowania.
 - **Wykres słupkowy - Całkowity koszt dla poszczególnych krajów**: Prezentuje łączny koszt podróży w różnych krajach.
 - **Mapa drzewa - Narodowość i typ zakwaterowania**: Wizualizuje dane dotyczące narodowości podróżników oraz preferencje dotyczące zakwaterowania.
-- **Mapa świata z bąbelkami**: Prezentuje dane w postaci mapy, gdzie po najechaniu na bąbelek w danym kraju wyświetlają się informacje: kraj, całkowity koszt, suma kosztów transportu, średnia liczba dni oraz suma kosztów zakwaterowania (przy użyciu tooltipu).
+- **Mapa świata z etykietami**: Prezentuje dane w postaci mapy, gdzie po najechaniu na dany kraj wyświetlają się informacje: kraj, całkowity koszt, suma kosztów transportu, średnia liczba dni oraz suma kosztów zakwaterowania (przy użyciu tooltipu).
 
 ## Źródło danych
 Dane do analizy zostały pobrane z publicznego zbioru danych "Traveler Trip Data" dostępnego na platformie Kaggle. Zawierają one informacje o podróżach oraz o podróżnikach, w tym ich narodowości, czas podróży oraz koszty związane z transportem i zakwaterowaniem.
@@ -40,9 +40,9 @@ Raport pozwala na szczegółową analizę danych podróży, umożliwiając dynam
   ```DAX
   Total_Travel_Days = SUM('Trips'[Duration_Days]) 
 
-## Strona 1 - Mapa Świata z Bąbelkami
+## Strona 1 - Mapa Świata z etykietami
 
-Na pierwszej stronie raportu znajduje się Mapa świata z bąbelkami, która prezentuje dane w postaci interaktywnej mapy. Po najechaniu na bąbelek w danym kraju, wyświetlają się następujące informacje:
+Na pierwszej stronie raportu znajduje się Mapa świata z etykietami, która prezentuje dane w postaci interaktywnej mapy. Po najechaniu na dany kraj, wyświetlają się następujące informacje:
 
 - Kraj – nazwa kraju
 - Całkowity koszt – całkowity koszt podróży w tym kraju
