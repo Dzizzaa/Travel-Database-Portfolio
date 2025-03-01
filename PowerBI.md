@@ -1,7 +1,7 @@
 # Power BI - Analiza danych podróży
 
 ## Opis projektu
-Projekt przedstawia interaktywną analizę danych podróży z wykorzystaniem Power BI. Głównym celem było stworzenie raportu, który umożliwia szczegółową analizę danych podróżniczych, takich jak liczba odwiedzonych miast i krajów, koszty transportu, zakwaterowania oraz dni spędzonych w różnych miejscach. W projekcie zastosowano szereg wizualizacji, które pozwalają na dynamiczną interakcję z danymi, umożliwiając filtrację według roku, kraju i typu zakwaterowania. W ramach projektu połączyłam się z bazą danych SQL Server, aby pobrać odpowiednie dane i zaimportować je do Power BI. Dzięki temu mogłam przeprowadzić analizę i wizualizację danych, które następnie wykorzystałam w raporcie w Power BI.
+Projekt przedstawia interaktywną analizę danych podróży z wykorzystaniem Power BI. Głównym celem było stworzenie raportu, który umożliwia szczegółową analizę danych podróżniczych, takich jak liczba odwiedzonych miast i krajów, koszty transportu, zakwaterowania oraz dni spędzonych w różnych miejscach. W projekcie zastosowano szereg wizualizacji, które pozwalają na dynamiczną interakcję z danymi, umożliwiając filtrację według roku, kraju i typu zakwaterowania. W ramach projektu połączyłam się z bazą danych SQL Server, aby pobrać dane i zaimportować je do Power BI. Dzięki temu mogłam przeprowadzić analizę i wizualizację danych, które następnie wykorzystałam w raporcie w Power BI.
 
 
 
